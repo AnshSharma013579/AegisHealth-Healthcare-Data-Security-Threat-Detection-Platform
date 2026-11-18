@@ -37,7 +37,13 @@ def main():
     print("[+] OpenAPI / Docs:  http://127.0.0.1:8000/docs")
     print("=" * 75)
 
-    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True, app_dir=str(BACKEND_DIR))
+    port = int(os.environ.get("PORT", 8000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    is_dev = os.environ.get("RENDER") is None and os.environ.get("CI") is None
+    reload_flag = os.environ.get("RELOAD", "true" if is_dev else "false").lower() in ("true", "1")
+
+    print(f"\n[+] Binding server to http://{host}:{port} (reload={reload_flag})...")
+    uvicorn.run("app.main:app", host=host, port=port, reload=reload_flag, app_dir=str(BACKEND_DIR))
 
 if __name__ == "__main__":
     main()
