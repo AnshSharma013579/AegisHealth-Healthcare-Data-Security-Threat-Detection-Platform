@@ -1,0 +1,1011 @@
+/* ================================================================
+   AEGISHEALTH: MASTER STYLESHEET & UI DESIGN SYSTEM
+   ================================================================ */
+
+@keyframes pulse-red {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-red {
+    animation: pulse-red 2s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.hash-cell {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.74rem;
+    letter-spacing: -0.02em;
+}
+
+.glass-panel {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+/* Universal View Chart Button */
+.btn-view-chart {
+    background-color: rgba(6, 182, 212, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    font-weight: 600;
+}
+.btn-view-chart:hover {
+    background-color: rgba(6, 182, 212, 0.35);
+    color: #ffffff;
+    border-color: #06b6d4;
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+}
+
+/* ================================================================
+   ROLE BADGE DESIGN SYSTEM (Dark & Light Mode)
+   ================================================================ */
+
+.role-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border-radius: 0.375rem;
+    padding: 0.15rem 0.55rem;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* DOCTOR */
+.role-badge-doctor, html.dark .role-badge-doctor {
+    background-color: rgba(14, 116, 144, 0.3) !important;
+    color: #38bdf8 !important;
+    border-color: #0284c7 !important;
+}
+html.light .role-badge-doctor {
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border-color: #7dd3fc !important;
+    font-weight: 700 !important;
+}
+
+/* NURSE */
+.role-badge-nurse, html.dark .role-badge-nurse {
+    background-color: rgba(6, 95, 70, 0.3) !important;
+    color: #34d399 !important;
+    border-color: #059669 !important;
+}
+html.light .role-badge-nurse {
+    background-color: #d1fae5 !important;
+    color: #047857 !important;
+    border-color: #6ee7b7 !important;
+    font-weight: 700 !important;
+}
+
+/* LAB_TECH */
+.role-badge-lab_tech, html.dark .role-badge-lab_tech {
+    background-color: rgba(180, 83, 9, 0.35) !important;
+    color: #fbbf24 !important;
+    border-color: #d97706 !important;
+}
+html.light .role-badge-lab_tech {
+    background-color: #fef3c7 !important;
+    color: #b45309 !important;
+    border-color: #fcd34d !important;
+    font-weight: 700 !important;
+}
+
+/* BILLING */
+.role-badge-billing, html.dark .role-badge-billing {
+    background-color: rgba(79, 70, 229, 0.3) !important;
+    color: #a5b4fc !important;
+    border-color: #6366f1 !important;
+}
+html.light .role-badge-billing {
+    background-color: #e0e7ff !important;
+    color: #4338ca !important;
+    border-color: #a5b4fc !important;
+    font-weight: 700 !important;
+}
+
+/* ADMIN */
+.role-badge-admin, html.dark .role-badge-admin {
+    background-color: rgba(147, 51, 234, 0.3) !important;
+    color: #d8b4fe !important;
+    border-color: #a855f7 !important;
+}
+html.light .role-badge-admin {
+    background-color: #f3e8ff !important;
+    color: #7e22ce !important;
+    border-color: #d8b4fe !important;
+    font-weight: 700 !important;
+}
+
+/* AUDITOR */
+.role-badge-auditor, html.dark .role-badge-auditor {
+    background-color: rgba(219, 39, 119, 0.3) !important;
+    color: #f472b6 !important;
+    border-color: #db2777 !important;
+}
+html.light .role-badge-auditor {
+    background-color: #fce7f3 !important;
+    color: #be185d !important;
+    border-color: #f472b6 !important;
+    font-weight: 700 !important;
+}
+
+/* Header User Badge Box styling */
+#user-badge-container {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+html.light #user-badge-container {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+html.light #user-full-name {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+html.light #user-dept {
+    color: #475569 !important;
+    font-weight: 600 !important;
+}
+html.light #user-shift {
+    color: #64748b !important;
+}
+
+/* Header User Risk Badge */
+.user-risk-badge.risk-badge-normal {
+    background-color: rgba(30, 41, 59, 0.7);
+    color: #94a3b8;
+    border-color: #334155;
+}
+html.light .user-risk-badge.risk-badge-normal {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #cbd5e1 !important;
+}
+
+.user-risk-badge.risk-badge-elevated {
+    background-color: rgba(120, 53, 15, 0.7);
+    color: #fcd34d;
+    border-color: #f59e0b;
+}
+html.light .user-risk-badge.risk-badge-elevated {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #f59e0b !important;
+}
+
+.user-risk-badge.risk-badge-critical {
+    background-color: rgba(136, 19, 55, 0.7);
+    color: #fda4af;
+    border-color: #f43f5e;
+}
+html.light .user-risk-badge.risk-badge-critical {
+    background-color: #ffe4e6 !important;
+    color: #9f1239 !important;
+    border-color: #f43f5e !important;
+}
+
+/* ================================================================
+   THEME TRANSITION & MICRO-ANIMATIONS
+   ================================================================ */
+
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                fill 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.theme-ripple {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%) scale(0);
+    animation: theme-ripple-expand 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes theme-ripple-expand {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.4;
+    }
+    40% {
+        opacity: 0.25;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3.5);
+        opacity: 0;
+    }
+}
+
+.theme-spin-to-light {
+    animation: rotate-to-light 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.theme-spin-to-dark {
+    animation: rotate-to-dark 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes rotate-to-light {
+    0% { transform: rotate(0deg) scale(0.7); }
+    50% { transform: rotate(180deg) scale(1.25); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotate-to-dark {
+    0% { transform: rotate(360deg) scale(0.7); }
+    50% { transform: rotate(180deg) scale(1.25); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* ================================================================
+   ACCOUNT SWITCH & CONTEXT TRANSITION ANIMATIONS
+   ================================================================ */
+
+@keyframes auth-badge-flash {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+    }
+    45% {
+        transform: scale(1.04);
+        box-shadow: 0 0 18px 4px rgba(6, 182, 212, 0.45);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+    }
+}
+
+.animate-badge-switch {
+    animation: auth-badge-flash 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes role-badge-pop {
+    0% {
+        transform: scale(0.65) rotate(-6deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.18) rotate(4deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.animate-role-pop {
+    animation: role-badge-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes scan-beam-sweep {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-scan-sweep {
+    animation: scan-beam-sweep 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes tab-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-tab-in {
+    animation: tab-slide-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes panel-fade-slide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-panel-switch {
+    animation: panel-fade-slide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes button-active-pop {
+    0% { transform: scale(0.92); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.animate-pill-switch {
+    animation: button-active-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ================================================================
+   LIGHT MODE DESIGN SYSTEM (html.light)
+   ================================================================ */
+
+html.light body {
+    background-color: #f8fafc !important; /* Tailwind slate-50 */
+    color: #0f172a !important;            /* Tailwind slate-900 */
+}
+
+/* Top Sticky Header */
+html.light header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+html.light header .text-white {
+    color: #0f172a !important;
+}
+
+/* Background Utility Overrides in Light Mode */
+html.light .bg-slate-950 {
+    background-color: #f8fafc !important;
+}
+
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/80 {
+    background-color: rgba(241, 245, 249, 0.85) !important;
+}
+
+html.light .bg-slate-900 {
+    background-color: #ffffff !important;
+}
+
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90 {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+html.light .bg-slate-800 {
+    background-color: #f1f5f9 !important;
+}
+
+html.light .bg-slate-800\/40,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/90 {
+    background-color: #f1f5f9 !important;
+}
+
+/* Borders in Light Mode */
+html.light .border-slate-800,
+html.light .border-slate-800\/40,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/80 {
+    border-color: #e2e8f0 !important;
+}
+
+html.light .border-slate-700,
+html.light .border-slate-700\/40,
+html.light .border-slate-700\/50,
+html.light .border-slate-700\/60,
+html.light .border-slate-700\/80 {
+    border-color: #cbd5e1 !important;
+}
+
+/* High-Contrast Typography in Light Mode */
+html.light .text-slate-100 {
+    color: #0f172a !important; /* solid black/slate-900 */
+}
+
+html.light .text-slate-200 {
+    color: #1e293b !important; /* slate-800 */
+}
+
+html.light .text-slate-300 {
+    color: #334155 !important; /* slate-700 */
+}
+
+html.light .text-slate-400 {
+    color: #475569 !important; /* slate-600 */
+    font-weight: 500;
+}
+
+html.light .text-slate-500 {
+    color: #64748b !important; /* slate-500 */
+}
+
+/* Patient Directory Specifics (Light Mode) */
+html.light .patient-mrn-cell,
+html.light td.font-mono.text-cyan-400 {
+    color: #0284c7 !important; /* sky-600 */
+    font-weight: 700 !important;
+}
+
+html.light .patient-name-cell {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+html.light .btn-view-chart {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    border: 1px solid #0369a1 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.25) !important;
+}
+html.light .btn-view-chart:hover {
+    background-color: #0369a1 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.4) !important;
+}
+
+/* Quick User Switcher in Light Mode */
+html.light .demo-user-btn {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+html.light .demo-user-btn:hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+}
+html.light .demo-user-btn.active-user {
+    background-color: #e0f2fe !important;
+    border-color: #0284c7 !important;
+    color: #0369a1 !important;
+    box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25) !important;
+    font-weight: 700 !important;
+}
+html.light .demo-user-btn.privileged-user {
+    background-color: #f3e8ff !important;
+    border-color: #d8b4fe !important;
+    color: #7e22ce !important;
+}
+html.light .demo-user-btn.privileged-user:hover {
+    background-color: #ede9fe !important;
+    color: #6b21a8 !important;
+    border-color: #a855f7 !important;
+}
+html.light .soc-indicator {
+    background-color: #d8b4fe !important;
+    color: #581c87 !important;
+}
+
+/* Department Filter Buttons in Light Mode */
+html.light .dept-btn {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #cbd5e1 !important;
+}
+html.light .dept-btn:hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+html.light .dept-btn.bg-cyan-500\/20,
+html.light .dept-btn.ring-cyan-500 {
+    background-color: #e0f2fe !important;
+    color: #0369a1 !important;
+    border-color: #0284c7 !important;
+    font-weight: 700 !important;
+}
+
+/* Clearance Badges in Light Mode */
+html.light .badge-vip {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #f59e0b !important;
+    font-weight: 700 !important;
+}
+html.light .badge-tripwire {
+    background-color: #ffe4e6 !important;
+    color: #9f1239 !important;
+    border-color: #f43f5e !important;
+    font-weight: 700 !important;
+}
+
+/* Tables (Header, Rows, Hover) in Light Mode */
+html.light thead {
+    background-color: #f1f5f9 !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+}
+
+html.light thead th {
+    color: #475569 !important;
+    font-weight: 700 !important;
+}
+
+html.light tbody tr {
+    border-color: #e2e8f0 !important;
+}
+
+html.light tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/* Form Inputs, Textarea, Select */
+html.light input,
+html.light textarea,
+html.light select {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    font-weight: 500 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* SOC Top Metric Cards in Light Mode */
+html.light #stat-total-alerts {
+    color: #0284c7 !important;
+}
+html.light #stat-critical-alerts {
+    color: #e11d48 !important;
+}
+html.light #stat-high-alerts {
+    color: #d97706 !important;
+}
+html.light #stat-quarantined-users {
+    color: #be123c !important;
+}
+html.light #stat-ledger-status {
+    color: #059669 !important;
+}
+
+/* SOC Alert Stream in Light Mode */
+html.light .alert-card {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+html.light .alert-card-critical {
+    background-color: #fff1f2 !important;
+    border-color: #fecdd3 !important;
+}
+html.light .alert-card-high {
+    background-color: #fff7ed !important;
+    border-color: #ffedd5 !important;
+}
+html.light .alert-card-medium {
+    background-color: #fffbeb !important;
+    border-color: #fef3c7 !important;
+}
+html.light .alert-card-low {
+    background-color: #f0fdf4 !important;
+    border-color: #dcfce7 !important;
+}
+
+html.light .alert-card p,
+html.light .alert-card .text-slate-300 {
+    color: #1e293b !important;
+}
+html.light .alert-card .font-mono.text-slate-200 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+html.light .alert-card .text-slate-400,
+html.light .alert-card .text-slate-500 {
+    color: #475569 !important;
+}
+html.light .alert-card strong.text-cyan-300 {
+    color: #0369a1 !important;
+}
+html.light .alert-card strong.text-rose-400 {
+    color: #be123c !important;
+}
+
+/* Cryptographic Blockchain Status Banner in Light Mode */
+html.light #blockchain-verification-banner.bg-emerald-950\/40,
+html.light #blockchain-verification-banner {
+    background: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.08) !important;
+}
+html.light #blockchain-verification-banner h4 {
+    color: #065f46 !important;
+    font-weight: 700 !important;
+}
+html.light #blockchain-verification-banner p {
+    color: #047857 !important;
+    font-weight: 500 !important;
+}
+html.light #blockchain-verification-banner span.font-mono {
+    background: #d1fae5 !important;
+    color: #065f46 !important;
+    border-color: #34d399 !important;
+    font-weight: 700 !important;
+}
+html.light #blockchain-verification-banner div.bg-emerald-500\/20 {
+    background: #d1fae5 !important;
+    color: #059669 !important;
+}
+
+/* Cryptographic Ledger Table in Light Mode */
+html.light #audit-table-body td.text-cyan-400 {
+    color: #0284c7 !important;
+    font-weight: 700 !important;
+}
+html.light #audit-table-body td.text-emerald-400 {
+    color: #047857 !important;
+    font-weight: 700 !important;
+}
+html.light #audit-table-body td.text-slate-400 {
+    color: #475569 !important;
+}
+html.light #audit-table-body td.text-slate-200 {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+html.light #audit-table-body td.text-slate-300 {
+    color: #1e293b !important;
+}
+
+/* Attack Simulator Header in Light Mode */
+html.light #panel-simulator > div:first-child {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f0fdf4 100%) !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+html.light #panel-simulator h2,
+html.light #panel-simulator h2.text-white,
+html.light #panel-simulator h3,
+html.light #panel-simulator h3.text-white {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+html.light #panel-simulator p.text-slate-400 {
+    color: #475569 !important;
+    font-weight: 500 !important;
+}
+
+/* Attack Simulator Cards in Light Mode */
+html.light #panel-simulator .p-5.rounded-2xl {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06) !important;
+}
+html.light #panel-simulator .p-5.rounded-2xl h4 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+html.light #panel-simulator .p-5.rounded-2xl p {
+    color: #475569 !important;
+}
+
+/* Attack Simulator High-Visibility Action Buttons */
+html.light #btn-scenario-legitimate_care {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border-color: #15803d !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25) !important;
+}
+html.light #btn-scenario-legitimate_care:hover {
+    background-color: #15803d !important;
+}
+
+html.light #btn-scenario-bulk_scraping {
+    background-color: #ea580c !important;
+    color: #ffffff !important;
+    border-color: #c2410c !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25) !important;
+}
+html.light #btn-scenario-bulk_scraping:hover {
+    background-color: #c2410c !important;
+}
+
+html.light #btn-scenario-honeytoken_snoop {
+    background-color: #e11d48 !important;
+    color: #ffffff !important;
+    border-color: #be123c !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25) !important;
+}
+html.light #btn-scenario-honeytoken_snoop:hover {
+    background-color: #be123c !important;
+}
+
+html.light #btn-scenario-unauthorized_probing {
+    background-color: #d97706 !important;
+    color: #ffffff !important;
+    border-color: #b45309 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25) !important;
+}
+html.light #btn-scenario-unauthorized_probing:hover {
+    background-color: #b45309 !important;
+}
+
+html.light #btn-scenario-break_the_glass {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0369a1 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
+}
+html.light #btn-scenario-break_the_glass:hover {
+    background-color: #0369a1 !important;
+}
+
+html.light #btn-scenario-bulk_exfiltration {
+    background-color: #9333ea !important;
+    color: #ffffff !important;
+    border-color: #7e22ce !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(147, 51, 234, 0.25) !important;
+}
+html.light #btn-scenario-bulk_exfiltration:hover {
+    background-color: #7e22ce !important;
+}
+
+html.light button[onclick*="reset_all"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    font-weight: 600 !important;
+}
+html.light button[onclick*="reset_all"]:hover {
+    background-color: #f1f5f9 !important;
+}
+
+/* Modals in Light Mode */
+html.light #patient-chart-modal > div,
+html.light #btg-prompt-modal > div {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light #patient-chart-modal h3,
+html.light #btg-prompt-modal h3 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+html.light #patient-chart-modal .bg-slate-900\/90,
+html.light #patient-chart-modal .bg-slate-900 {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light #modal-records-list {
+    background-color: #f8fafc !important;
+}
+
+html.light #modal-records-list > div {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light #modal-records-list h4 {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+html.light #modal-records-list .bg-slate-950\/60,
+html.light #modal-records-list .font-mono {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Scrollbars in Light Mode */
+html.light ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ================================================================
+   LOGIN SCREEN & AUTH PORTAL (Dark & Light Mode Support)
+   ================================================================ */
+
+#login-screen.hidden,
+#app-screen.hidden {
+    display: none !important;
+}
+
+#login-screen {
+    background-color: #020617;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(6, 182, 212, 0.18), rgba(2, 6, 23, 1));
+}
+
+html.light #login-screen {
+    background-color: #f8fafc !important;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(14, 165, 233, 0.15), rgba(248, 250, 252, 1)) !important;
+}
+
+html.light .login-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .login-card h1,
+html.light .login-card h2 {
+    color: #0f172a !important;
+}
+
+html.light .login-card label {
+    color: #334155 !important;
+}
+
+html.light #login-identifier,
+html.light #login-password {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+html.light #login-identifier:focus,
+html.light #login-password:focus {
+    background-color: #ffffff !important;
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2) !important;
+}
+
+html.light #login-identifier::placeholder,
+html.light #login-password::placeholder {
+    color: #94a3b8 !important;
+}
+
+html.light #login-demo-grid button {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light #login-demo-grid button:hover {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+}
+
+html.light #login-demo-grid button div {
+    color: #0f172a !important;
+}
+
+html.light #login-demo-grid button:hover div {
+    color: #0284c7 !important;
+}
+
+html.light #credentials-modal > div {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light #credentials-modal thead {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+}
+
+html.light #credentials-modal tr:hover {
+    background-color: #f8fafc !important;
+}
+
+html.light #credentials-modal td {
+    color: #1e293b !important;
+}
+
+html.light #credentials-modal h3 {
+    color: #0f172a !important;
+}
+
+/* Regulatory Compliance Matrix & Inactivity Modal in Light Mode */
+html.light #compliance-checklist-tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+html.light #compliance-checklist-tbody td {
+    color: #1e293b !important;
+}
+
+html.light #inactivity-warning-modal > div {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.light #inactivity-warning-modal h3 {
+    color: #0f172a !important;
+}
+
+html.light #inactivity-warning-modal p {
+    color: #475569 !important;
+}
+
+/* Patient Appointments Card & Controls in Light Mode */
+html.light #modal-appointments-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light #modal-appointments-card h4 {
+    color: #0f172a !important;
+}
+
+html.light #appointment-form-container {
+    background-color: #f8fafc !important;
+    border-color: #bae6fd !important;
+}
+
+html.light #appointment-schedule-form input,
+html.light #appointment-schedule-form select {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+}
+
+html.light .appointment-item-card {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light .appointment-item-card:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+

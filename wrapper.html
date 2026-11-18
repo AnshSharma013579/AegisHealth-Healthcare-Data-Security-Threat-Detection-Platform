@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<iframe id='app' src='http://127.0.0.1:8000/?user=billing_eva&theme=light' style='width:1440px;height:900px;border:none;'></iframe>
+<script>
+window.onload = () => {
+    setTimeout(() => {
+        const doc = document.getElementById('app').contentDocument;
+        const row = doc.querySelector('.patient-table-row');
+        if (row) row.click();
+    }, 1500);
+};
+</script>
+</body>
+</html>

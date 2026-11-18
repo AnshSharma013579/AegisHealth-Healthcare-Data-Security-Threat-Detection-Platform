@@ -1,0 +1,133 @@
+========================================================================================
+             AEGISHEALTH ZERO-TRUST HEALTHCARE SECURITY PLATFORM
+       Problem Statement PS-21: Healthcare Data Security & Unauthorized Access Detection
+                             Cyber Arena 2026
+========================================================================================
+
+DEFAULT DEMO USER ACCOUNTS & CREDENTIALS
+All accounts share the default master password: cyberarena2026
+
+----------------------------------------------------------------------------------------
+#1. CLINICAL DOCTOR (Cardiology Attending)
+    Full Name   : Dr. Alice Smith, MD
+    Role        : DOCTOR
+    Department  : Cardiology
+    Email       : alice.smith@aegishealth.org
+    Username    : doctor_alice
+    Password    : cyberarena2026
+    Shift Hours : 08:00 - 17:00
+    Access Scope: Full read/write for assigned Cardiology patients (e.g., Sterling Cross).
+                  Break-The-Glass protocol available for emergency overrides.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#2. CLINICAL DOCTOR (Oncology Specialist)
+    Full Name   : Dr. Frank Miller, MD
+    Role        : DOCTOR
+    Department  : Oncology
+    Email       : frank.miller@aegishealth.org
+    Username    : doctor_frank
+    Password    : cyberarena2026
+    Shift Hours : 08:00 - 17:00
+    Access Scope: Full read/write for Oncology ward patients.
+                  Can request emergency access to other wards via Break-The-Glass.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#3. CLINICAL NURSE (Cardiology Inpatient Ward)
+    Full Name   : Nurse Bob Johnson, RN
+    Role        : NURSE
+    Department  : Cardiology
+    Email       : bob.johnson@aegishealth.org
+    Username    : nurse_bob
+    Password    : cyberarena2026
+    Shift Hours : 07:00 - 15:30
+    Access Scope: Read/Update vitals and administration notes for assigned Cardiology patients.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#4. CLINICAL NURSE (Emergency Department Night Shift)
+    Full Name   : Nurse Carol Davis, RN
+    Role        : NURSE
+    Department  : Emergency
+    Email       : carol.davis@aegishealth.org
+    Username    : nurse_carol
+    Password    : cyberarena2026
+    Shift Hours : 15:00 - 23:30
+    Access Scope: Emergency room intake, triage, and patient vitals.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#5. LABORATORY TECHNICIAN
+    Full Name   : David Patel, MLS
+    Role        : LAB_TECH
+    Department  : Lab
+    Email       : david.patel@aegishealth.org
+    Username    : lab_david
+    Password    : cyberarena2026
+    Shift Hours : 09:00 - 17:00
+    Access Scope: View/Publish diagnostic and laboratory panels.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#6. BILLING & FINANCE SPECIALIST
+    Full Name   : Eva Martinez
+    Role        : BILLING
+    Department  : Billing
+    Email       : eva.martinez@aegishealth.org
+    Username    : billing_eva
+    Password    : cyberarena2026
+    Shift Hours : 08:30 - 16:30
+    Access Scope: Financial invoices, insurance claims, and demographic data.
+                  Cannot view sensitive clinical diagnosis notes or psychiatric records.
+                  STRICTLY RESTRICTED from Cyber SOC Dashboard & Cryptographic Ledger.
+
+----------------------------------------------------------------------------------------
+#7. HOSPITAL ADMINISTRATOR / VP OF OPERATIONS
+    Full Name   : Grace Hopper, VP Ops
+    Role        : ADMIN
+    Department  : Administration
+    Email       : grace.hopper@aegishealth.org
+    Username    : admin_grace
+    Password    : cyberarena2026
+    Shift Hours : 08:00 - 18:00
+    Access Scope: FULL PRIVILEGED ACCESS.
+                  Can access Clinical EHR Portal, Cyber SOC Dashboard, and Merkle Ledger.
+                  Can manage user quarantines, revoke elevated sessions, and review telemetry.
+
+----------------------------------------------------------------------------------------
+#8. CYBER SOC ANALYST / CHIEF AUDITOR
+    Full Name   : Alex Vance, CISSP
+    Role        : AUDITOR
+    Department  : Security
+    Email       : alex.vance@aegishealth.org
+    Username    : soc_analyst
+    Password    : cyberarena2026
+    Shift Hours : 00:00 - 23:59 (24/7 Monitoring)
+    Access Scope: FULL PRIVILEGED SECURITY ACCESS.
+                  Real-time Cyber SOC monitoring, AI anomaly alerts, live WebSocket feeds,
+                  and SHA-256 Merkle Blockchain audit verification.
+
+========================================================================================
+QUICK REFERENCE TABLE:
+========================================================================================
+Role       | Full Name              | Username      | Email                           | Password
+-----------|------------------------|---------------|---------------------------------|---------------
+DOCTOR     | Dr. Alice Smith, MD    | doctor_alice  | alice.smith@aegishealth.org     | cyberarena2026
+DOCTOR     | Dr. Frank Miller, MD   | doctor_frank  | frank.miller@aegishealth.org    | cyberarena2026
+NURSE      | Nurse Bob Johnson, RN  | nurse_bob     | bob.johnson@aegishealth.org     | cyberarena2026
+NURSE      | Nurse Carol Davis, RN  | nurse_carol   | carol.davis@aegishealth.org     | cyberarena2026
+LAB_TECH   | David Patel, MLS       | lab_david     | david.patel@aegishealth.org     | cyberarena2026
+BILLING    | Eva Martinez           | billing_eva   | eva.martinez@aegishealth.org    | cyberarena2026
+ADMIN      | Grace Hopper, VP Ops   | admin_grace   | grace.hopper@aegishealth.org    | cyberarena2026
+AUDITOR    | Alex Vance, CISSP      | soc_analyst   | alex.vance@aegishealth.org      | cyberarena2026
+
+========================================================================================
+SECURITY & COMPLIANCE NOTES:
+- Passwords are encrypted using salted bcrypt (rounds=12).
+- Zero-Trust RBAC & ABAC enforces strict separation: clinical roles (Doctor, Nurse, Lab, Billing)
+  never have visibility or access to the Cyber SOC Dashboard or Cryptographic Ledger.
+- Break-The-Glass protocol requires explicit emergency justification and logs directly
+  to the immutable blockchain ledger.
+- VIP Tripwires (Honeytokens) trigger instant CRITICAL alerts and account quarantine.
+========================================================================================
